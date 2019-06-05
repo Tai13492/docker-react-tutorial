@@ -4,12 +4,6 @@ services:
 
 before_install:
   - docker build -t tai13492/docker-react-tutorial -f Dockerfile.dev .
-  sudo: required
-  services:
-    - docker
 
-  before_install:
-    - docker build -t tai13492/docker-react-tutorial -f Dockerfile.dev .
-
-  script:
-    - docker run tai13492/docker-react-tutorial npm run test -- --coverage
+script:
+  - docker run tai13492/docker-react-tutorial npm run test -- --coverage
